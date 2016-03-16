@@ -1,12 +1,14 @@
 package person;
 
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
-public class Person {
+public class Person implements Serializable{
 
     String name;
     String email;
-    List<Skill> skillSet;
+    List<Skill> skillSet = new ArrayList<>();
 
     public Person(String name, String email) {
         this.name = name;
@@ -33,5 +35,14 @@ public class Person {
         this.skillSet = skillSet;
     }
 
-    public void addSkill(Skill skill) {}
+    public void addSkill(Skill skill) {skillSet.add(skill);}
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", skillSet=" + skillSet +
+                '}';
+    }
 }

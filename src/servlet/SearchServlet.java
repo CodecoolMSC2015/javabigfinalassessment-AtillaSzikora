@@ -24,7 +24,7 @@ public class SearchServlet extends HttpServlet {
         skills = req.getParameter("skills").split(",");
         skillSet = new HashSet<>(Arrays.asList(skills));
         searchType = req.getParameter("radio");
-        out.println("\n(" + searchType + ") Given skills are: " + skillSet);
+        out.println("\n(" + searchType + ") Given skills are: " + skillSet + "\n");
 
         new SocketClient();
         out.print(personSet);

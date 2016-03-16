@@ -1,6 +1,8 @@
 package person;
 
-public class Skill {
+import java.io.Serializable;
+
+public class Skill implements Serializable {
 
     String name;
     String description;
@@ -18,5 +20,14 @@ public class Skill {
     }
     public double getRate() {
         return rate;
+    }
+
+    @Override
+    public String toString() {
+        return "Skill{" +
+                "name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", rate=" + rate +
+                '}';
     }
 }

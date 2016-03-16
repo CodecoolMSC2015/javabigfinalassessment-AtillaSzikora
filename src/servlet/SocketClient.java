@@ -13,14 +13,13 @@ public class SocketClient {
 
     public SocketClient() {
         try {
-            socket = new Socket("192.168.150.31", 1234);
+            socket = new Socket("localhost", 1234);
             oos = new ObjectOutputStream(socket.getOutputStream());
             oos.writeObject(SearchServlet.skillSet);
 
             ois = new ObjectInputStream(socket.getInputStream());
-            try {SearchServlet.personSet = (Set) ois.readObject();}
-            catch (Exception e) {e.printStackTrace();}
+            SearchServlet.personSet = (Set) ois.readObject();
 
-            ois.close(); oos.close(); socket.close(); }
-        catch (Exception e) {e.printStackTrace();} }
+            ois.close(); oos.close(); socket.close();
+        } catch (Exception e) {e.printStackTrace();} }
 }
