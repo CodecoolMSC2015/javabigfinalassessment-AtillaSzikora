@@ -28,5 +28,5 @@ public class PersonStoreServerSocket {
             oos.close(); ois.close(); socket.close(); serverSocket.close(); }
         catch (Exception e) {e.printStackTrace();} }
 
-    public static void main(String[] args) {new PersonStoreServerSocket();}
+    public static void main(String[] args) {new PersonStoreServerSocket(); }
 }
