@@ -20,6 +20,8 @@ public class SocketClient {
             ois = new ObjectInputStream(socket.getInputStream());
             SearchServlet.personSet = (Set) ois.readObject();
 
-            ois.close(); oos.close(); socket.close();
+            ois.close();
+            oos.close();
+            socket.close();
         } catch (Exception e) {e.printStackTrace();} }
 }

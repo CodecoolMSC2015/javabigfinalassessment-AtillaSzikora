@@ -36,7 +36,10 @@ public class PersonStoreServerSocket {
             oos.writeObject(personSet);
             System.out.println(personSet + " is sent to the client.");
 
-            oos.close(); ois.close(); socket.close(); serverSocket.close();
+            oos.close();
+            ois.close();
+            socket.close();
+            serverSocket.close();
         } catch (Exception e) {e.printStackTrace();} }
 
     public static void main(String[] args) {new PersonStoreServerSocket(); }

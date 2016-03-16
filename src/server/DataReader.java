@@ -4,13 +4,13 @@ import person.Person;
 import java.util.HashSet;
 import java.util.Set;
 
-public class DataReader {
+public abstract class DataReader {
 
     String searchCriteria;
     SearchType searchType;
+    Set<Person> personsSet = new HashSet<>();
 
     public Set<Person> getPersons (String searchCriteria, SearchType searchType) {
-        Set<Person> personsSet = new HashSet<>();
         return personsSet; }
 
     public void setSearchCriteria(String searchCriteria) {
